@@ -57,3 +57,22 @@ VALUES ('G001','Boeing',777');
 
 INSERT INTO maskapai(kode_maskapai, nama_maskapai)
 VALUES ('5001','Garuda');
+
+##Insert Record
+
+INSERT INTO customer VALUES(
+	10001,
+	"budi365",
+	"12345678",
+	"Budi",
+	"Soetomo",
+	"budi@gmail.com",
+	"L",
+	"8211648987",
+	"Kopo"
+	);
+
+INSERT INTO admin VALUES(
+	201,
+	"Luther Hariyanto"
+)
