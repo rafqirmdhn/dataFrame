@@ -37,7 +37,7 @@ CREATE TABLE customer_memesan_tiket(
 	tgl_tiba varchar(100) NOT NULL,
 	FOREIGN KEY (id_customer) REFERENCES customer(id_customer) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (kode_tiket) REFERENCES tiket(kode_tiket) ON UPDATE CASCADE ON DELETE CASCADE
-)
+);
 
 CREATE TABLE pesawat(
 	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
