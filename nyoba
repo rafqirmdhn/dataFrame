@@ -1,2 +1,12 @@
 testing
 test 2
+CREATE TABLE tiket{
+	kode_tiket varchar(50) NOT NULL PRIMARY KEY,
+	no_penerbangan varchar(50) NOT NULL,
+	kelas varchar(100) NOT NULL,
+	asal varchar(100) NOT NULL,
+	tujuan varchar(100) NOT NULL,
+	harga int(100) NOT NULL,
+	kode_pesawat varchar(50) NOT NULL,
+	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(varchar)
+};
