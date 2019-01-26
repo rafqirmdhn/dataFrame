@@ -55,7 +55,7 @@ CREATE TABLE maskapai(
 
 
 INSERT INTO pesawat(kode_pesawat, nama_pesawat, jenis_pesawat)
-VALUES ('G001','Boeing',777');
+VALUES ('4001','Boeing',777');
 
 INSERT INTO maskapai(kode_maskapai, nama_maskapai)
 VALUES ('5001','Garuda');
