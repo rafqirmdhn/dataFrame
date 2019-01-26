@@ -1,5 +1,5 @@
 CREATE TABLE customer(
-	id_customer NUMBER(10) PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+	id_customer INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
 	username VARCHAR(20) NOT NULL, 
 	password VARCHAR(20) NOT NULL, 
 	first_name VARCHAR(20) NOT NULL, 
@@ -11,43 +11,43 @@ CREATE TABLE customer(
 	); 
 
 CREATE TABLE admin(
-	id_admin NUMBER(10) PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+	id_admin INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
 	nama_admin VARCHAR(10) NOT NULL
-	)
+	);
 
-CREATE TABLE tiket{
-	kode_tiket number(50) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE tiket(
+	kode_tiket INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	no_penerbangan varchar(50) NOT NULL,
 	kelas varchar(100) NOT NULL,
 	asal varchar(100) NOT NULL,
 	tujuan varchar(100) NOT NULL,
 	harga int(100) NOT NULL,
-	kode_pesawat number(50) NOT NULL,
+	kode_pesawat INT NOT NULL,
 	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE
-};
+);
 
 CREATE TABLE customer_memesan_tiket(
-	id_customer number(20) NOT NULL AUTO_INCREMENT,
-	kode_tiket number(20) NOT NULL,
-	kode_pesan number(20) NOT NULL AUTO_INCREMENT,
+	id_customer INT NOT NULL,
+	kode_tiket INT NOT NULL,
+	kode_pesan INT NOT NULL AUTO_INCREMENT,
 	nama_pemesan varchar(100) NOT NULL,
 	no_identitas varchar(100) NOT NULL,
 	tgl_penerbangan varchar(100) NOT NULL,
-	waktu_terbang number(10) NOT NULL,
+	waktu_terbang INT NOT NULL,
 	tgl_tiba varchar(100) NOT NULL,
 	FOREIGN KEY (id_customer) REFERENCES customer(id_customer) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (kode_tiket) REFERENCES tiket(kode_tiket) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
 CREATE TABLE pesawat(
-	kode_pesawat NUMBER(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	nama_pesawat VARCHAR(50) NOT NULL,
 	jenis_pesawat VARCHAR(50) NOT NULL
 );
 
 
 CREATE TABLE maskapai(
-	kode_maskapai NUMBER(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	nama_maskapai VARCHAR(50) NOT NULL
 );
 
