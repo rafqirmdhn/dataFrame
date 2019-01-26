@@ -54,7 +54,7 @@ CREATE TABLE maskapai(
 
 -- INSERT RECORD
 INSERT INTO pesawat VALUES(
-	'G001','Boeing',777');
+	'4001','Boeing',777');
 
 INSERT INTO maskapai VALUES(
 	'5001','Garuda');
