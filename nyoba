@@ -1,5 +1,3 @@
-testing
-test 2
 CREATE TABLE tiket{
 	kode_tiket varchar(50) NOT NULL PRIMARY KEY,
 	no_penerbangan varchar(50) NOT NULL,
@@ -8,20 +6,30 @@ CREATE TABLE tiket{
 	tujuan varchar(100) NOT NULL,
 	harga int(100) NOT NULL,
 	kode_pesawat varchar(50) NOT NULL,
-	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat)
+	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(varchar)
 };
+
+CREATE TABLE customer_memesan_tiket(
+	id_customer varchar(20) NOT NULL,
+	kode_tiket varchar(20) NOT NULL,
+	kode_pesan varchar(20) NOT NULL,
+	nama_pemesan varchar(100) NOT NULL,
+	no_identitas varchar(100) NOT NULL,
+	tgl_penerbangan varchar(100) NOT NULL,
+	waktu_terbang number(10) NOT NULL,
+	tgl_lahir varchar(100) NOT NULL,
+	FOREIGN KEY (id_customer) REFERENCES customer(id_customer) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (kode_tiket) REFERENCES tiket(kode_tiket) ON UPDATE CASCADE ON DELETE CASCADE
+)
 
 CREATE TABLE pesawat(
 	kode_pesawat VARCHAR(50) PRIMARY KEY NOT NULL,
 	nama_pesawat VARCHAR(50) NOT NULL,
 	jenis_pesawat VARCHAR(50) NOT NULL
-
 );
 
 
 CREATE TABLE maskapai(
 	kode_maskapai VARCHAR(50) PRIMARY KEY NOT NULL,
 	nama_maskapai VARCHAR(50) NOT NULL
-
-
 );
