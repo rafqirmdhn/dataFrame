@@ -40,15 +40,17 @@ CREATE TABLE customer_memesan_tiket(
 )
 
 CREATE TABLE pesawat(
-	kode_pesawat VARCHAR(50) PRIMARY KEY NOT NULL,
+	kode_pesawat NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	nama_pesawat VARCHAR(50) NOT NULL,
 	jenis_pesawat VARCHAR(50) NOT NULL
+
 );
 
 
 CREATE TABLE maskapai(
-	kode_maskapai VARCHAR(50) PRIMARY KEY NOT NULL,
+	kode_maskapai NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	nama_maskapai VARCHAR(50) NOT NULL
+
 );
 
 
