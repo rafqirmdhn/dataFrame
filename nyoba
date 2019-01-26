@@ -8,7 +8,7 @@ CREATE TABLE tiket{
 	tujuan varchar(100) NOT NULL,
 	harga int(100) NOT NULL,
 	kode_pesawat varchar(50) NOT NULL,
-	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(varchar)
+	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat)
 };
 
 CREATE TABLE pesawat(
