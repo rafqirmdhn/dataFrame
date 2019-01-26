@@ -10,3 +10,18 @@ CREATE TABLE tiket{
 	kode_pesawat varchar(50) NOT NULL,
 	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(varchar)
 };
+
+CREATE TABLE pesawat(
+	kode_pesawat VARCHAR(50) PRIMARY KEY NOT NULL,
+	nama_pesawat VARCHAR(50) NOT NULL,
+	jenis_pesawat VARCHAR(50) NOT NULL
+
+);
+
+
+CREATE TABLE maskapai(
+	kode_maskapai VARCHAR(50) PRIMARY KEY NOT NULL,
+	nama_maskapai VARCHAR(50) NOT NULL
+
+
+);
