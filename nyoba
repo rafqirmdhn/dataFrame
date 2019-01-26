@@ -12,7 +12,7 @@ CREATE TABLE customer(
 
 CREATE TABLE admin(
 	id_admin INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-	nama_admin VARCHAR(10) NOT NULL
+	nama_admin VARCHAR(50) NOT NULL
 	);
 
 CREATE TABLE pesawat(
