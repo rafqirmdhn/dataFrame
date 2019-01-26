@@ -41,7 +41,7 @@ CREATE TABLE tiket(
 CREATE TABLE customer_memesan_tiket(
 	id_customer INT NOT NULL,
 	kode_tiket INT NOT NULL,
-	kode_pesan INT NOT NULL AUTO_INCREMENT,
+	kode_pesan INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nama_pemesan varchar(100) NOT NULL,
 	no_identitas varchar(100) NOT NULL,
 	tgl_penerbangan varchar(100) NOT NULL,
