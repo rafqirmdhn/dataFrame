@@ -27,64 +27,43 @@ CREATE TABLE tiket{
 };
 
 CREATE TABLE customer_memesan_tiket(
-	id_customer varchar(20) NOT NULL,
-	kode_tiket varchar(20) NOT NULL,
-	kode_pesan varchar(20) NOT NULL,
+	id_customer number(20) NOT NULL,
+	kode_tiket number(20) NOT NULL,
+	kode_pesan number(20) NOT NULL AUTO_INCREMENT,
 	nama_pemesan varchar(100) NOT NULL,
 	no_identitas varchar(100) NOT NULL,
 	tgl_penerbangan varchar(100) NOT NULL,
 	waktu_terbang number(10) NOT NULL,
-	tgl_lahir varchar(100) NOT NULL,
+	tgl_tiba varchar(100) NOT NULL,
 	FOREIGN KEY (id_customer) REFERENCES customer(id_customer) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (kode_tiket) REFERENCES tiket(kode_tiket) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
 CREATE TABLE pesawat(
-	kode_pesawat NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	kode_pesawat VARCHAR(50) PRIMARY KEY NOT NULL,
 	nama_pesawat VARCHAR(50) NOT NULL,
 	jenis_pesawat VARCHAR(50) NOT NULL
-
 );
 
 
 CREATE TABLE maskapai(
-	kode_maskapai NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	kode_maskapai VARCHAR(50) PRIMARY KEY NOT NULL,
 	nama_maskapai VARCHAR(50) NOT NULL
-
 );
 
 
-INSERT INTO pesawat(kode_pesawat, nama_pesawat, jenis_pesawat)
-VALUES ('4001','Boeing',777');
+-- INSERT RECORD
+INSERT INTO pesawat VALUES(
+	'G001','Boeing',777');
 
-INSERT INTO maskapai(kode_maskapai, nama_maskapai)
-VALUES ('5001','Garuda');
-
-##Insert Record
+INSERT INTO maskapai VALUES(
+	'5001','Garuda');
 
 INSERT INTO customer VALUES(
-	10001,
-	"budi365",
-	"12345678",
-	"Budi",
-	"Soetomo",
-	"budi@gmail.com",
-	"L",
-	"8211648987",
-	"Kopo"
-	);
+	10001, "budi365", "12345678", "Budi", "Soetomo", "budi@gmail.com", "L", "08211648987","Kopo");
 
 INSERT INTO admin VALUES(
-	201,
-	"Luther Hariyanto"
-);
-
-INSERT INTO tiket VALUES(
-	30001,
-	'GA-JB01',
-	'firstclass',
-	'Soekarno Hatta (Jakarta)',
-	'Ngurah Rai (Bali)',
-	30000000,
-	4001
-	);
+	201, "Luther Hariyanto");
+	
+INSERT INTO customer_memesan_tiket VALUES(
+	10001, 30001, 60001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
