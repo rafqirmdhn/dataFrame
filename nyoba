@@ -50,3 +50,10 @@ CREATE TABLE maskapai(
 	kode_maskapai VARCHAR(50) PRIMARY KEY NOT NULL,
 	nama_maskapai VARCHAR(50) NOT NULL
 );
+
+
+INSERT INTO pesawat(kode_pesawat, nama_pesawat, jenis_pesawat)
+VALUES ('G001','Boeing',777');
+
+INSERT INTO maskapai(kode_maskapai, nama_maskapai)
+VALUES ('5001','Garuda');
