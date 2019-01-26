@@ -15,6 +15,18 @@ CREATE TABLE admin(
 	nama_admin VARCHAR(10) NOT NULL
 	);
 
+CREATE TABLE pesawat(
+	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nama_pesawat VARCHAR(50) NOT NULL,
+	jenis_pesawat VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE maskapai(
+	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nama_maskapai VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE tiket(
 	kode_tiket INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	no_penerbangan varchar(50) NOT NULL,
@@ -39,19 +51,6 @@ CREATE TABLE customer_memesan_tiket(
 	FOREIGN KEY (kode_tiket) REFERENCES tiket(kode_tiket) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE pesawat(
-	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	nama_pesawat VARCHAR(50) NOT NULL,
-	jenis_pesawat VARCHAR(50) NOT NULL
-);
-
-
-CREATE TABLE maskapai(
-	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	nama_maskapai VARCHAR(50) NOT NULL
-);
-
-
 -- INSERT RECORD
 INSERT INTO pesawat VALUES(
 	4001,'Boeing',777);
@@ -70,3 +69,4 @@ INSERT INTO customer_memesan_tiket VALUES(
 
 INSERT INTO tiket VALUES(
 	30001, 'GA-JB01', 'firstclass', 'Soekarno Hatta (Jakarta)', 'Ngurah Rai (Bali)', 30000000, 4001);
+
