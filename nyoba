@@ -77,4 +77,14 @@ INSERT INTO customer VALUES(
 INSERT INTO admin VALUES(
 	201,
 	"Luther Hariyanto"
-)
+);
+
+INSERT INTO tiket VALUES(
+	30001,
+	'GA-JB01',
+	'firstclass',
+	'Soekarno Hatta (Jakarta)',
+	'Ngurah Rai (Bali)',
+	30000000,
+	4001
+	);
